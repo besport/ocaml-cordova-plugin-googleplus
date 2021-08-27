@@ -15,14 +15,24 @@ module Login : sig
 
   type error = Ojs.t
 
+  type scopes
+
+  val scopes :
+    profile:string ->
+    email:string ->
+    ?others:(Ojs.t -> string) list ->
+    unit ->
+    scopes
+    [@@js.builder] [@@verbatim_names]
+
+  val user : ?id_token:string -> ?server_auth_code:string -> unit -> user
+    [@@js.builder] [@@js.verbatim_names]
+
   val parameters :
     ?web_client_id:string ->
     ?offline:bool ->
-    ?id_token:string ->
-    ?server_auth_code:string ->
-    ?profile:string ->
-    ?email:string ->
-    ?scopes:Ojs.t list ->
+    ?user:user ->
+    ?scopes:scopes ->
     unit ->
     parameters
     [@@js.builder] [@@js.verbatim_names]
