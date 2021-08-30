@@ -18,11 +18,7 @@ module Login : sig
   val parameters :
     ?web_client_id:string ->
     ?offline:bool ->
-    ?id_token:string ->
-    ?server_auth_code:string ->
-    ?profile:string ->
-    ?email:string ->
-    ?scopes:Ojs.t list ->
+    ?scopes:string list ->
     unit ->
     parameters
     [@@js.builder] [@@js.verbatim_names]
