@@ -40,7 +40,7 @@ type loginResponse
 
 val loginResponse : Login.user -> loginResponse [@@js.call]
 
-val id_token : loginResponse -> string [@@js.get "id_token"]
+val id_token : loginResponse -> string [@@js.get]
 
 val logout : ?onInit:(Ojs.t -> unit) -> ?onError:(Ojs.t -> unit) -> unit -> unit
   [@@js.global "window.plugins.googleplus.logout"]
