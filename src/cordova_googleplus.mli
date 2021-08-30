@@ -15,8 +15,6 @@ module Login : sig
 
   type error = Ojs.t
 
-  type scopes
-
   val parameters :
     ?web_client_id:string ->
     ?offline:bool ->
